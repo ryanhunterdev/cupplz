@@ -5,7 +5,7 @@ export default function manifest(): MetadataRoute.Manifest {
     name: 'Cupplz',
     short_name: 'Cupplz',
     description: 'Get the perfect cup every time',
-    start_url: '/',
+    start_url: './?mode=standalone',
     display: 'standalone',
     background_color: '#ffffff',
     theme_color: '#000000',
