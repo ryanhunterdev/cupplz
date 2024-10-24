@@ -1,4 +1,4 @@
-.page
+.Home
     display: flex
     flex-direction: column
     align-items: center
@@ -6,3 +6,25 @@
     gap: 30px
     height: 100vh
     padding: 20px
+
+    h1
+        font-family: var(--font-pillow-lava)
+
+.Intro
+    position: absolute
+    top: 0
+    left: 0
+    width: 100vw
+    height: 100vh
+    background: var(--background)
+    display: flex
+    flex-direction: column
+    align-items: center
+    justify-content: center
+    transition: 0.3s
+    opacity: 0
+    visibility: hidden
+
+    &.Show
+        opacity: 1
+        visibility: visible

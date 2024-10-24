@@ -1,12 +1,28 @@
+'use client'
+
 import s from "./page.module.sass";
+import cn from 'clsx'
 
 import CoffeeCalculator from "@/components/CoffeeCalculator/CoffeeCalculator";
 
+import { useEffect, useState } from "react";
+
 export default function Home() {
-  return (
-    <div className={s.page}>
-        <h1>Cupplz</h1>
-        <CoffeeCalculator />
-    </div>
-  );
+    const [showIntro, setShowIntro] = useState(true);
+
+    useEffect(() => {
+        setTimeout(() => {
+            setShowIntro(false);
+        }, 1000);
+    }, []);
+
+    return (
+        <div className={s.Home}>
+            <h1>Cupplz</h1>
+            <CoffeeCalculator />
+            <div className={cn(s.Intro, showIntro && s.Show)}>
+                <img src="/logo.svg" alt="Cupplz" />
+            </div>
+        </div>
+    );
 }
