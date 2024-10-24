@@ -23,8 +23,8 @@ export default function Home() {
             <h1>Cupplz</h1>
             <CoffeeCalculator />
             <div className={s.AddApp}>
-                <p>download app!</p>
-                <p>Press <span>{Share}</span> and "Add to Home Screen"</p>
+                <p>{`Download app!`}</p>
+                <p>{`Press `}<span>{Share}</span>{` and "Add to Home Screen"`}</p>
             </div>
             <div className={cn(s.Intro, showIntro && s.Show)}>
                 <img src="/logo.svg" alt="Cupplz" />
