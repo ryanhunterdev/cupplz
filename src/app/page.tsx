@@ -1,44 +1,12 @@
-'use client'
+import { Suspense } from "react";
+import Main from "@/components/Main/Main";
+import Loading from "@/components/Loading/Loading";
 
-import s from "./page.module.sass";
-import cn from 'clsx'
-
-import CoffeeCalculator from "@/components/CoffeeCalculator/CoffeeCalculator";
-
-import { useEffect, useState } from "react";
-
-import Share from '@/icons/share'
-
-import { useSearchParams } from 'next/navigation'
-
-export default function Home() {
-    const [showIntro, setShowIntro] = useState(true);
-
-    const searchParams = useSearchParams()
- 
-    const mode = searchParams.get('mode')
-
-    const isStandAlone = mode === 'standalone'
-
-    useEffect(() => {
-        setTimeout(() => {
-            setShowIntro(false);
-        }, 1000);
-    }, []);
+export default function Page() {
 
     return (
-        <div className={s.Home}>
-            <h1>Cupplz</h1>
-            <CoffeeCalculator />
-            {!isStandAlone &&
-                <div className={s.AddApp}>
-                    <p>{`Download app!`}</p>
-                    <p>{`Press `}<span>{Share}</span>{` and "Add to Home Screen"`}</p>
-                </div>
-            }
-            <div className={cn(s.Intro, showIntro && s.Show)}>
-                <img src="/logo.svg" alt="Cupplz" />
-            </div>
-        </div>
+        <Suspense fallback={<Loading />}>
+            <Main />
+        </Suspense>
     );
 }
