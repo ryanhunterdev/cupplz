@@ -7,8 +7,8 @@ export default function manifest(): MetadataRoute.Manifest {
     description: 'Get the perfect cup every time',
     start_url: './?mode=standalone',
     display: 'standalone',
-    background_color: '#ffffff',
-    theme_color: '#000000',
+    background_color: '#845C30',
+    theme_color: '#845C30',
     icons: [
       {
         src: '/icon-192x192.png',
