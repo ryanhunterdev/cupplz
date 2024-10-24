@@ -4,6 +4,7 @@ import s from "./Main.module.sass";
 import cn from 'clsx'
 
 import CoffeeCalculator from "@/components/CoffeeCalculator/CoffeeCalculator";
+import Loading from "@/components/Loading/Loading";
 
 import { useEffect, useState } from "react";
 
@@ -37,7 +38,7 @@ export default function Main() {
                 </div>
             }
             <div className={cn(s.Intro, showIntro && s.Show)}>
-                <img src="/logo.svg" alt="Cupplz" />
+                <Loading />
             </div>
         </div>
     );
